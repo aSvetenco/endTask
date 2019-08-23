@@ -1,6 +1,7 @@
-package com.sa.endtask
+package com.sa.endtask.ui
 
 import android.os.Bundle
+import com.sa.endtask.R
 import dagger.android.support.DaggerAppCompatActivity
 
 class MainActivity : DaggerAppCompatActivity() {
