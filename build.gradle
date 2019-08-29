@@ -10,7 +10,7 @@ buildscript {
         retrofit = '2.5.0'
         leakCanary = '1.6.3'
         gson = '2.8.5'
-        glide = '4.9.0'
+        picasso = '2.71828'
     }
     repositories {
         google()

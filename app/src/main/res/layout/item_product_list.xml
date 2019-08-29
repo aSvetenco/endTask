@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/common_10dp"
+    android:background="@color/product_list_item_background_color"
+    android:orientation="vertical"
+    android:paddingTop="36dp"
+    android:paddingBottom="36dp">
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:src="@tools:sample/avatars"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/ProductListTextStyle"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="Test Shirt" />
+
+    <TextView
+        android:id="@+id/color"
+        style="@style/ProductListTextStyle"
+        android:textColor="@android:color/darker_gray"
+        tools:text="Some color" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/ProductListTextStyle"
+        tools:text="£199" />
+
+</LinearLayout>
