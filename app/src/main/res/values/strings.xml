@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EndTask</string>
+    <string name="error_general">Something went wrong</string>
+
+    <!--product list-->
+    <string name="product_list_title">Products</string>
+    <string name="product_list_some_color">Some color</string>
+    <string name="product_list_change_view_type">change view type</string>
+    <string name="product_list_grid_view">Small</string>
+    <string name="product_list_list_view">Large</string>
+
 </resources>
