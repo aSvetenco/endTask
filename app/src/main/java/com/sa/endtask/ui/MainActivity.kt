@@ -14,6 +14,7 @@ class MainActivity : DaggerAppCompatActivity() {
     lateinit var factory: ViewModelProvider.Factory
 
     private val adapter = ProductListAdapter()
+
     private val viewModel by lazy {
         ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
     }
@@ -23,4 +24,6 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+
 }

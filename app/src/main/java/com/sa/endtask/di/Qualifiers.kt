@@ -11,10 +11,6 @@ import kotlin.reflect.KClass
 @Retention
 annotation class ActivityScoped
 
-@Scope
-@Retention
-annotation class FragmentScoped
-
 @Target(FUNCTION, PROPERTY_GETTER, PROPERTY_SETTER)
 @Retention
 @MapKey
