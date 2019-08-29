@@ -11,6 +11,9 @@ buildscript {
         leakCanary = '1.6.3'
         gson = '2.8.5'
         picasso = '2.71828'
+        rxJava = '2.2.8'
+        rxAndroid = '2.1.1'
+        rxAdapter = '2.6.1'
 
     }
     repositories {

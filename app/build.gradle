@@ -64,4 +64,9 @@ dependencies {
     //ui
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //rx
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxAdapter"
+
 }

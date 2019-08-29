@@ -12,5 +12,5 @@ class ProductClient @Inject constructor(private val api: Api) : ProductClientCon
 }
 
 interface ProductClientContract {
-    fun getProductList(): Call<Products>
+    fun getProductList(): Single<Products>
 }
