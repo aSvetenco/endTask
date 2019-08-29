@@ -1,6 +1,6 @@
-package com.sa.endtask.di.api
+package com.sa.endtask.api
 
-import com.sa.endtask.di.api.models.Products
+import com.sa.endtask.api.models.Products
 import retrofit2.Call
 import retrofit2.http.GET
 

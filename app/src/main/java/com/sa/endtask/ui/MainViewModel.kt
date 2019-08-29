@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sa.endtask.R
-import com.sa.endtask.di.api.client.ProductClient
-import com.sa.endtask.di.api.models.Product
+import com.sa.endtask.api.client.ProductClient
+import com.sa.endtask.api.models.Product
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
