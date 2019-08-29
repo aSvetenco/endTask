@@ -6,11 +6,12 @@ buildscript {
         ktCoroutines = '1.1.1'
         ktx = '1.0.1'
         lifecycle = '2.0.0'
-        dagger = '2.21'
-        retrofit = '2.5.0'
+        dagger = '2.24'
+        retrofit = '2.6.1'
         leakCanary = '1.6.3'
         gson = '2.8.5'
         picasso = '2.71828'
+
     }
     repositories {
         google()
