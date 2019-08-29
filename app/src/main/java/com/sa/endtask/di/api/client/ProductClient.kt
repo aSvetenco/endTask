@@ -1,9 +1,7 @@
 package com.sa.endtask.di.api.client
 
 import com.sa.endtask.di.api.Api
-import com.sa.endtask.di.api.models.Product
 import com.sa.endtask.di.api.models.Products
-import io.reactivex.Single
 import retrofit2.Call
 import javax.inject.Inject
 
