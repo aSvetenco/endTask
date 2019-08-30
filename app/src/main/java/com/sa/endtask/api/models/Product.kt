@@ -1,4 +1,4 @@
-package com.sa.endtask.di.api.models
+package com.sa.endtask.api.models
 
 
 data class Products(val products: List<Product> = listOf())
