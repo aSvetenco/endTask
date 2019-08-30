@@ -4,12 +4,12 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sa.endtask.R
-import com.sa.endtask.api.client.ProductClient
+import com.sa.endtask.api.client.ProductClientContract
 import com.sa.endtask.api.models.Product
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(private val client: ProductClient) : ViewModel(),
+class MainViewModel @Inject constructor(private val client: ProductClientContract) : ViewModel(),
     CoroutineScope {
 
     private val job = Job()
@@ -49,5 +49,4 @@ class MainViewModel @Inject constructor(private val client: ProductClient) : Vie
         job.cancel()
         super.onCleared()
     }
-
 }

@@ -2,8 +2,8 @@ package com.sa.endtask.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.insomn.courts.app.di.ViewModelKey
 import com.sa.endtask.di.ViewModelFactory
+import com.sa.endtask.di.ViewModelKey
 import com.sa.endtask.ui.MainViewModel
 import dagger.Binds
 import dagger.Module

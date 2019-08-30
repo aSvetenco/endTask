@@ -11,7 +11,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.sa.endtask.UiTestRunner"
     }
     buildTypes {
         release {
@@ -32,9 +32,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kt"
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
 
     //android
     implementation 'androidx.core:core-ktx:1.0.2'
@@ -57,7 +54,6 @@ dependencies {
 
     //network
     implementation "com.google.code.gson:gson:$gson"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.2'
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
 
@@ -67,5 +63,16 @@ dependencies {
     //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$ktCoroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$ktCoroutines"
+
+    // Instrumentation tests
+
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso"
+    androidTestImplementation "androidx.test:runner:$testRunner"
+    androidTestImplementation "androidx.test:rules:$testRules"
+    androidTestImplementation "androidx.test.ext:junit:$testRules"
+    androidTestImplementation "androidx.annotation:annotation:$testAnnotation"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger"
 
 }

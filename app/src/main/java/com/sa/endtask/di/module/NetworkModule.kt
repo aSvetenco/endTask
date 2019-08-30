@@ -2,9 +2,9 @@ package com.sa.endtask.di.module
 
 import android.content.res.Resources
 import com.google.gson.Gson
-import com.insomn.courts.app.di.BaseUrl
 import com.sa.endtask.R
 import com.sa.endtask.api.Api
+import com.sa.endtask.di.BaseUrl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
