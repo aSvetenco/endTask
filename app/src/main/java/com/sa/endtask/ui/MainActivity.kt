@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.annotation.StringRes
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -14,6 +12,7 @@ import com.sa.endtask.R
 import com.sa.endtask.api.models.Product
 import dagger.android.AndroidInjection
 import dagger.android.support.DaggerAppCompatActivity
+import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -23,6 +22,7 @@ class MainActivity : DaggerAppCompatActivity(), ProductListAdapter.Listener {
     lateinit var factory: ViewModelProvider.Factory
 
     private val adapter = ProductListAdapter(this)
+    private val disposable = CompositeDisposable()
 
     private val viewModel by lazy {
         ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
@@ -35,9 +35,10 @@ class MainActivity : DaggerAppCompatActivity(), ProductListAdapter.Listener {
         setSupportActionBar(toolbar)
         title = getString(R.string.product_list_title)
         list.adapter = adapter
-        viewModel.productList.observe(this, Observer(adapter::submitList))
-        viewModel.error.observe(this, Observer(::showMessage))
-        viewModel.progress.observe(this, Observer { progress.isRefreshing = it })
+        disposable.addAll(
+            viewModel.productList.subscribe(adapter::submitList),
+            viewModel.error.subscribe(::showMessage),
+            viewModel.progress.subscribe { progress.isRefreshing = it })
         viewModel.loadProductList()
         progress.setOnRefreshListener { viewModel.loadProductList() }
     }
@@ -64,7 +65,7 @@ class MainActivity : DaggerAppCompatActivity(), ProductListAdapter.Listener {
         }
 
     override fun onItemClick(item: Product) {
-        showMessage(R.string.product_list_item_is_clicked)
+        showMessage(getString(R.string.product_list_item_is_clicked))
     }
 
     private fun changeLayoutManager(type: ListType) {
@@ -76,8 +77,13 @@ class MainActivity : DaggerAppCompatActivity(), ProductListAdapter.Listener {
         list.scrollToPosition(position)
     }
 
-    private fun showMessage(@StringRes message: Int) {
+    private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
+        super.onDestroy()
     }
 
     private enum class ListType {
