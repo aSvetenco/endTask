@@ -80,7 +80,6 @@ class MainActivity : DaggerAppCompatActivity(), ProductListAdapter.Listener {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-
     private enum class ListType {
         LIST_VIEW,
         GRID_VIEW

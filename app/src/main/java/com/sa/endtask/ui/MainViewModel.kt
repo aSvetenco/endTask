@@ -23,10 +23,9 @@ class MainViewModel @Inject constructor(private val client: ProductClientContrac
         disposable.add(
             client.getProductList()
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .map { it.products }
-                .doFinally { progress.value = false }
-                .subscribe({ productList.value = it }, {
+                .doFinally { progress.postValue(false)}
+                .subscribe({ productList.postValue(it) }, {
                     Log.d("FAIL", it.localizedMessage, it)
                     error.value = R.string.error_general
                 })
