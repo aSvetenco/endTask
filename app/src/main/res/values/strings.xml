@@ -8,5 +8,6 @@
     <string name="product_list_change_view_type">change view type</string>
     <string name="product_list_grid_view">Small</string>
     <string name="product_list_list_view">Large</string>
+    <string name="product_list_item_is_clicked">Item is clicked</string>
 
 </resources>
