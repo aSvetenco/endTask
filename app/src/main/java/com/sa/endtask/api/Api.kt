@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface Api {
 
-    @GET("catalog/example.jsonn")
+    @GET("catalog/example.json")
     fun getProductList(): Single<Products>
 }
