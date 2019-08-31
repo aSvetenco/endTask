@@ -24,13 +24,8 @@ class MainViewModel @Inject constructor(private val client: ProductClientContrac
         launch {
             try {
                 withContext(Dispatchers.IO) {
-                    val response = client.getProductList().execute()
-
-                    if (response.isSuccessful) {
-                        val list = response.body()!!.products
-                        productList.postValue(list)
-                    } else throw Throwable(response.errorBody()?.string())
-
+                    val list = client.getProductList().products
+                    productList.postValue(list)
                 }
             } catch (t: Throwable) {
                 onError(t)
