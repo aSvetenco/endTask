@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.annotation.StringRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -64,7 +63,7 @@ class MainActivity : DaggerAppCompatActivity(), ProductListAdapter.Listener {
         }
 
     override fun onItemClick(item: Product) {
-        showMessage(R.string.product_list_item_is_clicked)
+        showMessage(getString(R.string.product_list_item_is_clicked))
     }
 
     private fun changeLayoutManager(type: ListType) {
@@ -76,10 +75,9 @@ class MainActivity : DaggerAppCompatActivity(), ProductListAdapter.Listener {
         list.scrollToPosition(position)
     }
 
-    private fun showMessage(@StringRes message: Int) {
+    private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
 
     private enum class ListType {
         LIST_VIEW,
