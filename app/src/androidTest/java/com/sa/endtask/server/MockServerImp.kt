@@ -10,5 +10,5 @@ class MockServerImp(private val parser: AssetsParser) : MockServer {
         Single.just(parser.getResponse(PRODUCTS_END_POINT, Products::class.java))
 }
 
-//FakeEnd points
+//Fake End Points
 private const val PRODUCTS_END_POINT = "responses/products.json"
