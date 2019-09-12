@@ -8,9 +8,15 @@ buildscript {
         lifecycle = '2.0.0'
         dagger = '2.24'
         retrofit = '2.6.1'
-        leakCanary = '1.6.3'
         gson = '2.8.5'
         picasso = '2.71828'
+        rxJava = '2.2.8'
+        rxAndroid = '2.1.1'
+        rxAdapter = '2.6.1'
+        testRunner = '1.2.0'
+        espresso = '3.2.0'
+        testAnnotation = '1.0.0'
+        testRules = '1.1.1'
 
     }
     repositories {

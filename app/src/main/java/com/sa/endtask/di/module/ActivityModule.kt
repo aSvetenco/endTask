@@ -1,6 +1,6 @@
 package com.sa.endtask.di.module
 
-import com.insomn.courts.app.di.ActivityScoped
+import com.sa.endtask.di.ActivityScoped
 import com.sa.endtask.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

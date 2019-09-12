@@ -11,13 +11,14 @@ import javax.inject.Singleton
 @Component(
     modules = [AndroidSupportInjectionModule::class,
         AppModule::class,
-        ClientModule::class,
         ActivityModule::class,
         ViewModelModule::class,
-        NetworkModule::class]
+        NetworkModule::class,
+        MockClientModule::class
+    ]
 )
 
-interface AppComponent : AndroidInjector<App> {
+interface MockAppComponent : AppComponent {
 
     @Component.Builder
     abstract class Builder : AndroidInjector.Builder<App>()

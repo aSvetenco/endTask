@@ -1,4 +1,4 @@
-package com.insomn.courts.app.di
+package com.sa.endtask.di
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
